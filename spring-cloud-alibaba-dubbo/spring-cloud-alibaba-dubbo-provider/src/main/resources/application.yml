@@ -1,0 +1,34 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: dubbo-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.107.240.255:8848
+  #  配置中约定的尽量一个bean使用一个name，随着引入的第三方库越来越多，就有可能就会出现名字相同的bean
+  # 允许同名bean覆盖
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  scan:
+    # 暴露接口的包，需指定实现类所在的位置
+    base-packages: com.ery.dubbo.provider.service
+  protocol:
+    #Dubbo协议 常用
+    #Hessian协议
+    #HTTP协议
+    #RMI协议
+    #WebService协议
+    #Thrift协议
+    #Memcached协议
+    #Redis协议
+    name: dubbo
+    # port为协议端口（-1 表示自增端口，从 20880 开始）
+    port: -1
+  # 注册中心 可以使用nacos zookeeper
+  # Dubbo 服务注册中心配置，其中子属性address
+  registry:
+    address: nacos://39.107.240.255:8848
