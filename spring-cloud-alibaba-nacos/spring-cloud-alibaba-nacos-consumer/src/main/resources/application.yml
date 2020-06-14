@@ -7,4 +7,6 @@ spring:
     nacos:
       discovery:
         server-addr: 39.107.240.255:8848
-
+feign:
+  sentinel:
+    enabled: true
