@@ -13,6 +13,14 @@ spring:
 
 dubbo:
   protocol:
+    #Dubbo协议 常用
+    #Hessian协议
+    #HTTP协议
+    #RMI协议
+    #WebService协议
+    #Thrift协议
+    #Memcached协议
+    #Redis协议
     name: dubbo
     port: -1
   registry:
